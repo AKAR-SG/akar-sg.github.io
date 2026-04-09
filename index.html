@@ -3,107 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AKAR SG | Sovereign Integrity</title>
+    <title>AKAR SG | Sovereign Product Integrity</title>
     <style>
-        /* BALANCED LIQUID GLASS THEME */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
         body { 
             background-color: #000B18; 
             color: #E2E8F0; 
-            font-family: 'Inter', -apple-system, sans-serif; 
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, sans-serif;
             overflow-x: hidden;
         }
 
+        /* VLM IMPACT BACKGROUND */
+        .vlm-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #001C38 0%, #000B18 100%);
+            z-index: -1;
+        }
+
         header { 
-            background: rgba(0, 18, 38, 0.9); 
+            background: rgba(0, 18, 38, 0.8); 
+            backdrop-filter: blur(15px);
             padding: 20px 10%; 
             border-bottom: 2px solid #C5A059; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 1000;
         }
 
+        /* HERO SECTION WITH ANIMATION */
         .hero { 
-            padding: 100px 10%; 
-            text-align: center; 
-            background: radial-gradient(circle at center, #001C38 0%, #000B18 100%);
+            padding: 140px 10%; text-align: center; 
+            animation: fadeIn 1.5s ease-out;
         }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        .hero h1 { font-size: 2.8rem; color: #FFF; margin-bottom: 20px; }
-
-        .container { padding: 60px 10%; max-width: 1200px; margin: 0 auto; }
-
-        /* THE LIQUID GLASS CARDS - REPAIRED SYNTAX */
-        .pillar-card { 
-            background: rgba(255, 255, 255, 0.05); 
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px); /* Required for iPhone/Safari */
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px; 
-            border-radius: 12px; 
-            margin-bottom: 30px;
-            transition: 0.3s;
-        }
-
-        .pillar-card:hover { 
-            border-color: #C5A059; 
-            background: rgba(197, 160, 89, 0.05);
-        }
-
-        .status-glow {
-            display: inline-block;
-            padding: 5px 15px;
-            border: 1px solid #00FF88;
-            color: #00FF88;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 20px;
-        }
-
-        footer { padding: 80px 10%; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .hero h1 { font-size: 3.5rem; color: #FFF; margin-bottom: 20px; line-height: 1.1; }
         
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .container { padding: 40px 5%; }
+        .cta-button {
+            display: inline-block;
+            background: #C5A059; color: #000B18;
+            padding: 18px 40px; border-radius: 4px;
+            font-weight: 800; text-decoration: none;
+            text-transform: uppercase; letter-spacing: 1px;
+            margin-top: 30px; transition: 0.3s;
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
         }
+        .cta-button:hover { background: #FFF; transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 255, 255, 0.4); }
+
+        /* INTERACTIVE PILLAR CARDS */
+        .container { padding: 80px 10%; max-width: 1400px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+
+        .pillar-card { 
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px; border-radius: 15px; transition: 0.4s ease;
+        }
+        .pillar-card:hover { 
+            background: rgba(197, 160, 89, 0.08); 
+            border-color: #C5A059; transform: translateY(-10px);
+        }
+
+        .pillar-card h3 { color: #C5A059; margin-bottom: 15px; font-size: 1.5rem; }
+
+        /* RESIDENCY GLOW */
+        .residency-tag {
+            display: inline-flex; align-items: center;
+            padding: 8px 20px; border: 1px solid #00FF88;
+            color: #00FF88; border-radius: 50px;
+            font-size: 0.8rem; font-weight: 700; margin-bottom: 30px;
+        }
+        .glow-dot { width: 10px; height: 10px; background: #00FF88; border-radius: 50%; margin-right: 10px; box-shadow: 0 0 10px #00FF88; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+        footer { padding: 100px 10%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-link { color: #C5A059; text-decoration: none; font-weight: bold; }
+
+        @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } .container { padding: 40px 5%; } }
     </style>
 </head>
 <body>
+    <div class="vlm-bg"></div>
     <header>
-        <div style="font-weight:bold; font-size:1.2rem; color:white;">AKAR SG</div>
+        <div style="font-weight:900; letter-spacing:2px;">AKAR SG</div>
+        <nav style="display:flex; gap:20px;">
+            <a href="#connect" style="color:white; text-decoration:none; font-size:0.8rem; font-weight:700;">CONNECT</a>
+        </nav>
     </header>
 
     <section class="hero">
-        <div class="status-glow">SYSTEM ACTIVE: SOVEREIGN RESIDENCY</div>
+        <div class="residency-tag"><div class="glow-dot"></div>GCP SINGAPORE RESIDENT</div>
         <h1>Safeguarding Singapore’s<br>Product Sovereignty</h1>
-        <p>Advanced RegTech infrastructure for the National Digital Economy.</p>
+        <p>Strategic RegTech infrastructure for the <strong>Singapore Food Story 2.0</strong></p>
+        <a href="mailto:nik@akarsg.sg" class="cta-button">INTERFICE / CONNECT</a>
     </section>
 
     <div class="container">
-        <div class="pillar-card">
-            <h3 style="color:#C5A059; margin-bottom:15px;">1. Food Resilience (SFS2)</h3>
-            <p>Digitizing the "Trust Handshake" to secure national 30-by-30 goals via immutable digital ledgers.</p>
-        </div>
-
-        <div class="pillar-card">
-            <h3 style="color:#C5A059; margin-bottom:15px;">2. Digital MSME Enablement</h3>
-            <p>Empowering Micro and SME operators with Mobile-First AI to reduce overheads and manage supply costs.</p>
-        </div>
-
-        <div class="pillar-card">
-            <h3 style="color:#C5A059; margin-bottom:15px;">3. National Supply Bridge</h3>
-            <p>Interfacing with partners like NTUC FairPrice Group to connect heartland shops to national stockpiles.</p>
+        <div class="grid">
+            <div class="pillar-card">
+                <h3>SFS2 Resilience</h3>
+                <p>Digitizing the "Trust Handshake" to secure national food goals via immutable digital ledgers.</p>
+            </div>
+            <div class="pillar-card">
+                <h3>MSME AI-Uplift</h3>
+                <p>Empowering operators with Mobile-First AI to automate procurement and reduce overheads.</p>
+            </div>
+            <div class="pillar-card">
+                <h3>National Supply Bridge</h3>
+                <p>Strategic potential interfacing with NTUC to connect heartland shops to national stockpiles.</p>
+            </div>
         </div>
     </div>
 
-    <footer>
-        <p>Founder: Nik Saiful - HCA Certified | <a href="mailto:nik@akarsg.sg" style="color:#C5A059;">nik@akarsg.sg</a></p>
-        <p style="margin-top:20px; opacity:0.5;">&copy; 2026 AKAR SG (a NYK Strategy Pte. Ltd.). Physically Resident in Singapore.</p>
+    <footer id="connect">
+        <p style="margin-bottom:20px;"><strong>Lead Architect:</strong> Nik Saiful - HCA Certified </p>
+        <a href="mailto:nik@akarsg.sg" class="footer-link">nik@akarsg.sg</a>
+        <p style="margin-top:40px; opacity:0.3; font-size:0.7rem;">&copy; 2026 AKAR SG (a NYK Strategy Pte. Ltd.). SOVEREIGN DATA ARCHITECTURE.</p>
     </footer>
 </body>
 </html>
