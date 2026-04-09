@@ -5,91 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AKAR SG | Sovereign Product Integrity</title>
     <style>
-        /* RESET & CORE ALIGNMENT */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        /* DARK MODE CORE RESET */
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
         body { 
             font-family: 'Inter', -apple-system, sans-serif; 
-            line-height: 1.7; 
-            color: #2D3436; 
-            background-color: #FFFFFF;
+            line-height: 1.6; 
+            color: #E2E8F0; 
+            background-color: #000B18; /* Deep Midnight */
             -webkit-font-smoothing: antialiased;
         }
 
-        /* THE SOVEREIGN THEME COLORS */
         :root {
-            --primary-blue: #002B5B;
-            --sovereign-gold: #B69121;
-            --soft-gray: #F8F9FA;
+            --midnight-blue: #001226;
+            --sovereign-gold: #C5A059;
+            --platinum: #E2E8F0;
+            --card-dark: #001C38;
+            --accent-glow: rgba(197, 160, 89, 0.1);
         }
 
-        /* CLEAN HEADER ALIGNMENT */
+        /* PREMIUM HEADER */
         header { 
-            background: var(--primary-blue); 
+            background: rgba(0, 11, 24, 0.95); 
             padding: 20px 10%; 
             display: flex; 
             justify-content: space-between; 
             align-items: center;
-            border-bottom: 3px solid var(--sovereign-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--sovereign-gold);
+            backdrop-filter: blur(10px);
         }
-        .logo { color: white; font-weight: 800; font-size: 1.4rem; letter-spacing: 2px; }
+        .logo { color: #FFF; font-weight: 800; font-size: 1.4rem; letter-spacing: 2px; text-decoration: none; }
+        
+        nav a {
+            color: var(--platinum);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--sovereign-gold); }
 
-        /* HERO SECTION - REFINED TEXT ALIGNMENT */
+        /* DARK MODE HERO */
         .hero { 
-            background: var(--primary-blue); 
-            color: white; 
-            padding: 120px 15%; 
+            background: radial-gradient(circle at center, #001C38 0%, #000B18 100%);
+            padding: 160px 10%; 
             text-align: center; 
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 25px; line-height: 1.2; }
-        .hero p { font-size: 1.25rem; opacity: 0.85; max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 25px; color: #FFF; letter-spacing: -1px; }
+        .hero p { font-size: 1.25rem; max-width: 850px; margin: 0 auto 40px; color: var(--platinum); opacity: 0.8; }
+        
+        .btn-connect {
+            background: var(--sovereign-gold);
+            color: #000B18;
+            padding: 18px 45px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 2px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-connect:hover { 
+            background: #FFF; 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3);
+        }
 
-        /* THE PILLARS - BALANCED GRID */
-        .container { padding: 80px 10%; max-width: 1400px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { color: var(--primary-blue); font-size: 2.2rem; }
+        /* CONTENT SECTIONS */
+        .container { padding: 100px 10%; max-width: 1400px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 60px; color: #FFF; font-size: 2.4rem; letter-spacing: -0.5px; }
 
         .pillars { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 40px; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
         }
         .pillar-card { 
-            background: var(--soft-gray); 
-            padding: 40px; 
+            background: var(--card-dark); 
+            padding: 45px; 
             border-radius: 4px; 
-            border-top: 4px solid var(--primary-blue);
-            transition: 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
         }
-        .pillar-card:hover { transform: translateY(-10px); background: #FFF; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .pillar-card h3 { color: var(--primary-blue); margin-bottom: 15px; font-size: 1.3rem; }
+        .pillar-card:hover { 
+            border-color: var(--sovereign-gold); 
+            background: #00254A;
+            transform: translateY(-8px); 
+        }
+        .pillar-card h3 { color: var(--sovereign-gold); margin-bottom: 15px; font-size: 1.4rem; }
+        .pillar-card p { color: var(--platinum); opacity: 0.85; }
 
-        /* THE FORTRESS CALLOUT */
-        .fortress-box { 
-            background: #001F42; 
-            color: white; 
-            padding: 60px; 
-            border-radius: 8px; 
-            margin-top: 80px; 
+        /* SOVEREIGN STATUS BOX */
+        .status-box {
+            background: rgba(197, 160, 89, 0.05);
+            border: 1px solid var(--sovereign-gold);
+            padding: 40px;
             text-align: center;
-            border: 1px solid rgba(182, 145, 33, 0.3);
+            margin-top: 80px;
+            border-radius: 2px;
         }
-        .fortress-box h2 { color: var(--sovereign-gold); margin-bottom: 20px; }
+        .status-box h2 { color: var(--sovereign-gold); margin-bottom: 10px; }
 
-        /* FOOTER ALIGNMENT FIX */
+        /* DARK FOOTER */
         footer { 
-            background: #00152D; 
-            color: #A0AEC0; 
-            padding: 60px 10%; 
-            text-align: center; /* Forces total center alignment */
-            border-top: 1px solid #1A365D;
+            background: #000811; 
+            color: #718096; 
+            padding: 100px 10%; 
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
-        footer p { margin-bottom: 10px; }
+        .footer-logo { color: #FFF; font-size: 1.4rem; font-weight: 800; margin-bottom: 25px; display: block; letter-spacing: 2px; }
+        .footer-info { margin-bottom: 40px; font-size: 0.95rem; }
         .footer-link { color: var(--sovereign-gold); text-decoration: none; font-weight: 600; }
+        .footer-link:hover { color: #FFF; }
 
-        /* MOBILE OPTIMIZATION */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero { padding: 80px 5%; }
+            .hero h1 { font-size: 2.4rem; }
             .container { padding: 60px 5%; }
         }
     </style>
@@ -97,51 +134,76 @@
 <body>
 
     <header>
-        <div class="logo">AKAR SG</div>
+        <a href="#" class="logo">AKAR SG</a>
+        <nav>
+            <a href="#vision">Vision</a>
+            <a href="#pillars">Pillars</a>
+            <a href="#connect">Connect</a>
+        </nav>
     </header>
 
     <section class="hero">
         <h1>Safeguarding Singapore’s<br>Product Sovereignty</h1>
         <p>Advanced RegTech infrastructure architected for the <strong>Singapore Food Story 2.0</strong> and the National Digital Economy.</p>
+        <a href="#connect" class="btn-connect">Connect With Us</a>
     </section>
 
-    <div class="container">
-        <div class="section-header">
-            <h2>National Strategic Pillars</h2>
+    <div class="container" id="vision">
+        <h2 class="section-title">The Sovereign Mission</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 1.2rem; color: var(--platinum);">100% physically resident in Singapore (asia-southeast1). Data sovereignty protected by local legal jurisdiction and HCA-certified leadership (ID: 105189).</p>
         </div>
         
-        <div class="pillars">
-            <div class="pillar-card">
-                <h3>1. Food Resilience (SFS2)</h3>
-                <p>Digitizing the "Trust Handshake" to secure national 30-by-30 goals through immutable digital ledgers for high-integrity products.</p>
-            </div>
-
-            <div class="pillar-card">
-                <h3>2. Digital MSME Enablement</h3>
-                <p>Empowering Micro and SME operators with Mobile-First AI to automate procurement, analyze cost-savings, and reduce overheads.</p>
-            </div>
-
-            <div class="pillar-card">
-                <h3>3. National Supply Bridge</h3>
-                <p>Developing strategic interfacing with partners like <strong>NTUC FairPrice Group</strong> to connect local heartland shops directly to national stockpiles.</p>
-            </div>
-
-            <div class="pillar-card">
-                <h3>4. AI-Bilingualism</h3>
-                <p>Bridging regulatory standards and digital governance through AI-guided insights, ensuring complex compliance is accessible to every local SME.</p>
-            </div>
-        </div>
-
-        <div class="fortress-box">
-            <h2>The Fortress of Trust</h2>
-            <p>100% physically resident in Singapore (asia-southeast1). Data sovereignty protected by local legal jurisdiction and HCA-certified leadership (ID: 105189).</p>
+        <div class="status-box">
+            <h2>SYSTEM STATUS: SOVEREIGN</h2>
+            <p>Infrastructure Lockdown: Verified Singapore Residency Active</p>
         </div>
     </div>
 
+    <div class="container" id="pillars">
+        <h2 class="section-title">National Strategic Pillars</h2>
+        <div class="pillars">
+            <div class="pillar-card">
+                <h3>1. Food Resilience (SFS2)</h3>
+                <p>Digitizing the "Trust Handshake" to secure national 30-by-30 goals through immutable digital ledgers for high-integrity supply chains.</p>
+            </div>
+            <div class="pillar-card">
+                <h3>2. Digital MSME Enablement</h3>
+                <p>Empowering Micro and SME operators with Mobile-First AI to automate procurement, analyze savings, and reduce overheads.</p>
+            </div>
+            <div class="pillar-card">
+                <h3>3. National Supply Bridge</h3>
+                <p>Developing potential interfacing with partners like <strong>NTUC FairPrice Group</strong> to connect heartland shops directly to national stockpiles.</p>
+            </div>
+            <div class="pillar-card">
+                <h3>4. AI-Bilingualism</h3>
+                <p>Ensuring complex regulatory standards are accessible to every local SME through AI-guided insights and intelligent workflows.</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="connect" style="padding: 100px 10%; text-align: center; background: #000D1C;">
+        <h2 class="section-title">Interfacing Trust</h2>
+        <p style="margin-bottom: 40px; opacity: 0.8;">Ready to deploy sovereign integrity for your organization?</p>
+        <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
+            <a href="mailto:nik@akarsg.sg" style="text-decoration: none;">
+                <div style="color: var(--sovereign-gold); font-weight: 700; font-size: 1.1rem;">EMAIL ENQUIRY</div>
+                <div style="color: var(--platinum); font-size: 0.9rem;">nik@akarsg.sg</div>
+            </a>
+            <div style="text-align: center;">
+                <div style="color: var(--sovereign-gold); font-weight: 700; font-size: 1.1rem;">HCA VERIFICATION</div>
+                <div style="color: var(--platinum); font-size: 0.9rem;"> Valid to 2031</div>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p><strong>Founder & Lead Architect:</strong> Nik Saiful (Cert #105189 | Valid to 2031)</p>
-        <p>Infrastructure: Verified Google Cloud Singapore Resident | <a href="mailto:nik@akarsg.sg" class="footer-link">nik@akarsg.sg</a></p>
-        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 AKAR SG. All Rights Reserved. Physically Anchored in Singapore.</p>
+        <span class="footer-logo">AKAR SG</span>
+        <div class="footer-info">
+            <p><strong>Founder & Lead Architect:</strong> Nik Saiful</p>
+            <p>Infrastructure: Verified Google Cloud Singapore Resident</p>
+        </div>
+        <p style="font-size: 0.85rem; opacity: 0.4;">&copy; 2026 AKAR SG. All Rights Reserved. Physically Anchored in Singapore.</p>
     </footer>
 
 </body>
