@@ -3,28 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AKAR SG | Safeguarding Product Sovereignty</title>
+    <title>AKAR SG | Sovereign Product Integrity</title>
     <style>
+        /* RESET & CORE ALIGNMENT */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; background-color: #fff; }
-        
-        /* THE FORTRESS BLUE THEME */
-        header { background: #003366; color: white; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: bold; font-size: 1.5rem; letter-spacing: 1px; }
-        
-        .hero { background: #003366; color: white; padding: 100px 10%; text-align: center; border-bottom: 5px solid #C5A059; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
-        
-        .container { padding: 60px 10%; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; color: #003366; margin-bottom: 40px; font-size: 2rem; }
-        
-        .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .pillar-card { background: #F4F7F9; padding: 30px; border-radius: 8px; border-left: 5px solid #003366; }
-        .pillar-card h3 { color: #003366; margin-bottom: 15px; }
-        
-        .moat { background: #003366; color: white; padding: 40px; border-radius: 12px; margin-top: 50px; }
-        .footer { background: #1a1a1a; color: #ccc; padding: 40px 10%; text-align: center; font-size: 0.9rem; margin-top: 60px; }
-        a { color: #C5A059; text-decoration: none; }
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            line-height: 1.7; 
+            color: #2D3436; 
+            background-color: #FFFFFF;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* THE SOVEREIGN THEME COLORS */
+        :root {
+            --primary-blue: #002B5B;
+            --sovereign-gold: #B69121;
+            --soft-gray: #F8F9FA;
+        }
+
+        /* CLEAN HEADER ALIGNMENT */
+        header { 
+            background: var(--primary-blue); 
+            padding: 20px 10%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            border-bottom: 3px solid var(--sovereign-gold);
+        }
+        .logo { color: white; font-weight: 800; font-size: 1.4rem; letter-spacing: 2px; }
+
+        /* HERO SECTION - REFINED TEXT ALIGNMENT */
+        .hero { 
+            background: var(--primary-blue); 
+            color: white; 
+            padding: 120px 15%; 
+            text-align: center; 
+        }
+        .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 25px; line-height: 1.2; }
+        .hero p { font-size: 1.25rem; opacity: 0.85; max-width: 900px; margin: 0 auto; }
+
+        /* THE PILLARS - BALANCED GRID */
+        .container { padding: 80px 10%; max-width: 1400px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { color: var(--primary-blue); font-size: 2.2rem; }
+
+        .pillars { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 40px; 
+        }
+        .pillar-card { 
+            background: var(--soft-gray); 
+            padding: 40px; 
+            border-radius: 4px; 
+            border-top: 4px solid var(--primary-blue);
+            transition: 0.3s ease;
+        }
+        .pillar-card:hover { transform: translateY(-10px); background: #FFF; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .pillar-card h3 { color: var(--primary-blue); margin-bottom: 15px; font-size: 1.3rem; }
+
+        /* THE FORTRESS CALLOUT */
+        .fortress-box { 
+            background: #001F42; 
+            color: white; 
+            padding: 60px; 
+            border-radius: 8px; 
+            margin-top: 80px; 
+            text-align: center;
+            border: 1px solid rgba(182, 145, 33, 0.3);
+        }
+        .fortress-box h2 { color: var(--sovereign-gold); margin-bottom: 20px; }
+
+        /* FOOTER ALIGNMENT FIX */
+        footer { 
+            background: #00152D; 
+            color: #A0AEC0; 
+            padding: 60px 10%; 
+            text-align: center; /* Forces total center alignment */
+            border-top: 1px solid #1A365D;
+        }
+        footer p { margin-bottom: 10px; }
+        .footer-link { color: var(--sovereign-gold); text-decoration: none; font-weight: 600; }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 80px 5%; }
+            .container { padding: 60px 5%; }
+        }
     </style>
 </head>
 <body>
@@ -34,45 +101,47 @@
     </header>
 
     <section class="hero">
-        <h1>Safeguarding Singapore’s Product Sovereignty</h1>
-        <p>Sovereign RegTech infrastructure for the <strong>Singapore Food Story 2.0</strong> and the National Digital Economy.</p>
+        <h1>Safeguarding Singapore’s<br>Product Sovereignty</h1>
+        <p>Advanced RegTech infrastructure architected for the <strong>Singapore Food Story 2.0</strong> and the National Digital Economy.</p>
     </section>
 
     <div class="container">
-        <h2 class="section-title">National Strategic Pillars</h2>
+        <div class="section-header">
+            <h2>National Strategic Pillars</h2>
+        </div>
         
         <div class="pillars">
             <div class="pillar-card">
                 <h3>1. Food Resilience (SFS2)</h3>
-                <p>Digitizing the "Trust Handshake" to secure Singapore’s 30-by-30 goals through immutable digital ledgers for high-integrity products.</p>
+                <p>Digitizing the "Trust Handshake" to secure national 30-by-30 goals through immutable digital ledgers for high-integrity products.</p>
             </div>
 
             <div class="pillar-card">
                 <h3>2. Digital MSME Enablement</h3>
-                <p>Empowering Micro and SME operators with Mobile-First AI to automate procurement, review pricing, and reduce operating overheads.</p>
+                <p>Empowering Micro and SME operators with Mobile-First AI to automate procurement, analyze cost-savings, and reduce overheads.</p>
             </div>
 
             <div class="pillar-card">
                 <h3>3. National Supply Bridge</h3>
-                <p>Designing potential ecosystem interfacing with partners like <strong>NTUC FairPrice Group</strong> to connect local shops directly to national stockpiles.</p>
+                <p>Developing strategic interfacing with partners like <strong>NTUC FairPrice Group</strong> to connect local heartland shops directly to national stockpiles.</p>
             </div>
 
             <div class="pillar-card">
                 <h3>4. AI-Bilingualism</h3>
-                <p>Bridging operational standards and digital governance through AI-guided learning, making complex regulatory compliance accessible to all local SMEs.</p>
+                <p>Bridging regulatory standards and digital governance through AI-guided insights, ensuring complex compliance is accessible to every local SME.</p>
             </div>
         </div>
 
-        <div class="moat">
+        <div class="fortress-box">
             <h2>The Fortress of Trust</h2>
-            <p>100% physically resident in Singapore (asia-southeast1). Data sovereignty protected by local laws and HCA-certified leadership (ID: 105189).</p>
+            <p>100% physically resident in Singapore (asia-southeast1). Data sovereignty protected by local legal jurisdiction and HCA-certified leadership (ID: 105189).</p>
         </div>
     </div>
 
-    <footer id="leadership">
+    <footer>
         <p><strong>Founder & Lead Architect:</strong> Nik Saiful (Cert #105189 | Valid to 2031)</p>
-        <p>Infrastructure: Verified Google Cloud Singapore Resident | <a href="mailto:nik@akarsg.sg">nik@akarsg.sg</a></p>
-        <p>&copy; 2026 AKAR SG. All Rights Reserved.</p>
+        <p>Infrastructure: Verified Google Cloud Singapore Resident | <a href="mailto:nik@akarsg.sg" class="footer-link">nik@akarsg.sg</a></p>
+        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 AKAR SG. All Rights Reserved. Physically Anchored in Singapore.</p>
     </footer>
 
 </body>
