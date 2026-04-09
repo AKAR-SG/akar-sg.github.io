@@ -1,163 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AKAR SG | Safeguarding Product Sovereignty</title>
     <style>
+        /* CSS RESET FOR ALIGNMENT FIX */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         :root {
-            --sovereign-blue: #003366;
+            --sovereign-blue: #003366; /* Your Signature Color */
             --accent-gold: #C5A059;
             --light-bg: #F4F7F9;
-            --white: #ffffff;
-            --text-dark: #333333;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-dark);
-            background-color: var(--white);
+            font-family: 'Helvetica', 'Arial', sans-serif;
             line-height: 1.6;
+            color: #333;
+            background-color: #fff;
         }
 
+        /* HEADER ALIGNMENT FIX */
         header {
             background-color: var(--sovereign-blue);
-            color: var(--white);
             padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%;
         }
 
-        .logo { font-weight: bold; font-size: 1.5rem; letter-spacing: 1px; }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
+        /* HERO SECTION COLOR RECOVERY */
         .hero {
-            background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('https://images.unsplash.com/photo-1582653280643-e741764619d0?auto=format&fit=crop&q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 100px 10%;
+            background: var(--sovereign-blue); /* Solid fallback for visibility */
+            background: linear-gradient(rgba(0,51,102,0.9), rgba(0,51,102,0.9));
+            color: white;
             text-align: center;
+            padding: 80px 10%;
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem; opacity: 0.9; }
-
-        .container { padding: 80px 10%; }
-
+        /* PILLAR ALIGNMENT GRID */
         .pillars {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .pillar-card {
-            background: var(--light-bg);
-            padding: 30px;
-            border-radius: 8px;
-            border-left: 5px solid var(--sovereign-blue);
-            transition: transform 0.3s;
-        }
-
-        .pillar-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .pillar-card h3 { color: var(--sovereign-blue); margin-top: 0; }
-
-        .moat-section {
-            background-color: var(--sovereign-blue);
-            color: var(--white);
-            padding: 60px 10%;
-            border-radius: 12px;
-            margin: 40px 0;
-        }
-
-        .footer {
-            background: #222;
-            color: #999;
-            padding: 40px 10%;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-        .highlight { color: var(--accent-gold); font-weight: bold; }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            header { flex-direction: column; }
-            nav { margin-top: 15px; }
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 40px 0;
         }
     </style>
 </head>
-<body>
-
-    <header>
-        <div class="logo">AKAR SG</div>
-        <nav>
-            <a href="#vision">Vision</a>
-            <a href="#pillars">Pillars</a>
-            <a href="#leadership">Leadership</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Safeguarding Singapore’s Product Sovereignty</h1>
-        <p>Architecting a Sovereign RegTech infrastructure dedicated to the <strong>Singapore Food Story 2.0</strong> and the National Digital Economy.</p>
-        <p>AI-notarized integrity, 100% physically resident in Singapore.</p>
-    </section>
-
-    <div class="container" id="vision">
-        <h2 style="text-align: center; color: var(--sovereign-blue);">National Strategic Alignment</h2>
-        <div class="pillars" id="pillars">
-            
-            <div class="pillar-card">
-                <h3>1. Food Resilience & Security (SFS2)</h3>
-                <p>Digitizing the "Trust Handshake" across the supply chain to secure Singapore’s <strong>30-by-30 goals</strong>. We provide an immutable digital ledger for local production and accredited imports, ensuring supply chain resilience via verified, real-time data.</p>
-            </div>
-
-            <div class="pillar-card">
-                <h3>2. Digital MSME Enablement</h3>
-                <p>Uplifting the socio-economic heartland by empowering Micro and SME (MSME) operators with a <span class="highlight">Digital Consultant</span>. Mobile-First AI enables direct-order synchronization and cost management, reducing operating overheads for traditional businesses.</p>
-            </div>
-
-            <div class="pillar-card">
-                <h3>3. National Supply Integration</h3>
-                <p>Designing a "National Supply Bridge" for potential interfacing with partners like <strong>NTUC FairPrice Group</strong>. Connecting small-scale operators directly to the national stockpile for automated procurement and budget-friendly alternatives.</p>
-            </div>
-
-            <div class="pillar-card">
-                <h3>4. National AI Strategy 2.0</h3>
-                <p>Leading the <strong>"AI-Bilingualism"</strong> movement. We bridge the gap between operational standards and digital governance through simplified, AI-guided learning, making complex regulatory compliance accessible to every local SME.</p>
-            </div>
-
-        </div>
-
-        <div class="moat-section">
-            <h2>The Fortress of Trust Advantage</h2>
-            <p>AKAR SG is the first <strong>Sovereign Tech Stack</strong> in its class. We fuse certified leadership with a restricted <strong>Singapore-Resident Cloud Environment (asia-southeast1)</strong>. We ensure your data remains under local jurisdiction, protected by local infrastructure, and aligned with national values.</p>
-        </div>
-    </div>
-
-    <footer id="leadership">
-        <p><strong>Founder & Lead Architect:</strong> Nik Saiful (HCA ID: 105189 | Valid to 2031)</p>
-        <p>Entity: AKAR SG | Infrastructure: Verified Google Cloud Singapore Resident</p>
-        <p>Contact: <a href="mailto:nik@akarsg.sg" style="color: var(--accent-gold);">nik@akarsg.sg</a></p>
-        <br>
-        <p>&copy; 2026 AKAR SG. All Rights Reserved. Physically Anchored in Singapore.</p>
-    </footer>
-
-</body>
-</html>
