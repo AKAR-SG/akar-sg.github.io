@@ -3,82 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AKAR SG | Sovereign Halal-Tech</title>
+    <title>AKAR SG | Sovereign Elite</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
         body { background-color: #000B18; color: #E2E8F0; font-family: 'Inter', sans-serif; }
         
         .bg-mesh { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 50% 10%, #001A33 0%, #000B18 100%); }
 
-        header { background: rgba(0, 11, 24, 0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 25px 10%; border-bottom: 2px solid #00A651; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        header { 
+            background: rgba(0, 11, 24, 0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); 
+            padding: 20px 10%; border-bottom: 1px solid rgba(255,255,255,0.1); 
+            display: flex; justify-content: space-between; align-items: center; 
+            position: sticky; top: 0; z-index: 1000; 
+        }
         
-        /* THE BRANDING: AKAR (White) SG (Green) */
-        .logo { font-weight: 900; letter-spacing: 2px; font-size: 1.6rem; text-decoration: none; }
+        .logo { font-weight: 900; letter-spacing: 2px; font-size: 1.5rem; text-decoration: none; }
         .logo .akar { color: #FFFFFF; }
-        .logo .sg { color: #00A651; text-shadow: 0 0 10px rgba(0, 166, 81, 0.5); }
+        .logo .sg { color: #00A651; text-shadow: 0 0 10px rgba(0, 166, 81, 0.3); }
 
-        .hero { padding: 160px 10%; text-align: center; }
-        .hero h1 { font-size: 3.8rem; font-weight: 800; color: #FFF; line-height: 1.1; margin-bottom: 25px; }
+        nav a { color: white; text-decoration: none; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border: 1px solid #00A651; padding: 8px 15px; border-radius: 4px; transition: 0.3s; }
+        nav a:hover { background: #00A651; color: white; }
+
+        .hero { padding: 140px 10%; text-align: center; }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; color: #FFF; line-height: 1.1; margin-bottom: 25px; }
         
-        .btn-elite {
+        .btn-connect {
             display: inline-block; background: #00A651; color: white;
-            padding: 20px 50px; border-radius: 4px; font-weight: 900; text-decoration: none;
+            padding: 18px 45px; border-radius: 4px; font-weight: 900; text-decoration: none;
             text-transform: uppercase; letter-spacing: 2px; transition: 0.4s;
-            box-shadow: 0 10px 30px rgba(0, 166, 81, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 166, 81, 0.2);
         }
-        .btn-elite:hover { background: #FFFFFF; color: #00A651; transform: translateY(-5px); }
 
-        .container { padding: 100px 10%; max-width: 1400px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .container { padding: 80px 10%; max-width: 1400px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
         
-        .pillar-card { 
+        .card { 
             background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 15px; padding: 40px; transition: 0.5s; backdrop-filter: blur(10px);
+            border-radius: 12px; overflow: hidden; transition: 0.5s; backdrop-filter: blur(10px);
         }
-        .pillar-card:hover { transform: translateY(-10px); border-color: #00A651; background: rgba(0, 166, 81, 0.05); }
-        .pillar-card h3 { color: #00A651; margin-bottom: 15px; font-size: 1.4rem; }
+        .card:hover { transform: translateY(-10px); border-color: #00A651; }
+        
+        .card-img { width: 100%; height: 180px; object-fit: cover; opacity: 0.6; }
+        .card-body { padding: 30px; }
+        .card-body h3 { color: #00A651; margin-bottom: 12px; font-size: 1.3rem; }
+        .card-body p { font-size: 0.95rem; opacity: 0.7; line-height: 1.5; }
 
-        .benefit-tag { display: inline-block; padding: 5px 12px; background: rgba(0, 166, 81, 0.1); color: #00FF88; border-radius: 4px; font-size: 0.75rem; font-weight: 700; margin-top: 15px; }
-
-        footer { padding: 80px 10%; text-align: center; border-top: 1px solid rgba(0, 166, 81, 0.2); }
+        footer { padding: 60px 10%; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); }
     </style>
 </head>
 <body>
     <div class="bg-mesh"></div>
     <header>
         <a href="#" class="logo"><span class="akar">AKAR</span> <span class="sg">SG</span></a>
+        <nav><a href="mailto:nik@akarsg.sg">Connect</a></nav>
     </header>
 
     <section class="hero">
-        <h1 style="color: #FFFFFF;">The Gold Standard of<br><span style="color:#00A651;">Halal Sovereignty</span></h1>
-        <p style="font-size: 1.2rem; opacity: 0.8; max-width: 800px; margin: 0 auto 40px;">Architecting AI-driven integrity for the <strong>Singapore Food Story 2.0</strong>. Physically resident. Regulated by trust.</p>
-        <a href="mailto:nik@akarsg.sg" class="btn-elite">INTERFICE / CONNECT</a>
+        <h1>Safeguarding Singapore’s<br><span style="color:#00A651;">Product Sovereignty</span></h1>
+        <p style="opacity: 0.7; max-width: 700px; margin: 0 auto 40px;">Institutional RegTech architected for the <strong>Singapore Food Story 2.0</strong>. Physically resident. Data-driven trust.</p>
+        <a href="mailto:nik@akarsg.sg" class="btn-connect">INTERFICE / CONNECT</a>
     </section>
 
     <div class="container">
         <div class="grid">
-            <div class="pillar-card">
-                <h3>Automated Halal Log</h3>
-                <p>AI-driven batch tracking and expiry monitoring for 100% compliant supply chains.</p>
-                <div class="benefit-tag">ZERO-FAILURE COMPLIANCE</div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070" class="card-img">
+                <div class="card-body">
+                    <h3>Sovereign Data Residency</h3>
+                    <p>100% of compute and sensitive data physically resident in Singapore (asia-southeast1), ensuring zero foreign data mining.</p>
+                </div>
             </div>
-            <div class="pillar-card">
-                <h3>Global FHCB Sync</h3>
-                <p>Real-time verification of foreign ingredients against MUIS-approved certification bodies.</p>
-                <div class="benefit-tag">SEAMLESS IMPORT INTEGRITY</div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070" class="card-img">
+                <div class="card-body">
+                    <h3>Visual Language Models</h3>
+                    <p>Mobile-native AI that interprets physical invoices and certificates in real-time, automating complex procurement for MSMEs.</p>
+                </div>
             </div>
-            <div class="pillar-card">
-                <h3>Margin Optimizer</h3>
-                <p>Identify cost-effective, Halal-certified alternatives to boost MSME profitability.</p>
-                <div class="benefit-tag">ECONOMIC RESILIENCE</div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072" class="card-img">
+                <div class="card-body">
+                    <h3>National Supply Integration</h3>
+                    <p>Strategic potential interfacing with partners like NTUC to connect heartland shops directly to national stockpiles.</p>
+                </div>
             </div>
+            <div class="card"><div class="card-body">
+                <h3>Automated Halal Compliance</h3>
+                <p>Active monitoring of batch numbers and expiry dates across the entire supply chain to ensure zero-failure integrity.</p>
+            </div></div>
+            <div class="card"><div class="card-body">
+                <h3>AI-Driven Cost Optimization</h3>
+                <p>Algorithmic matching of certified ingredients against lower-cost, verified suppliers to increase merchant profitability.</p>
+            </div></div>
+            <div class="card"><div class="card-body">
+                <h3>Institutional AI-Bilingualism</h3>
+                <p>Simplifying complex regulatory frameworks into actionable, step-by-step mobile workflows for local entrepreneurs.</p>
+            </div></div>
         </div>
     </div>
 
     <footer>
-        <p style="font-weight:900; font-size:1.5rem; margin-bottom:20px;"><span style="color:#FFF;">AKAR</span> <span style="color:#00A651;">SG</span></p>
-        <p style="opacity:0.6; font-size:0.9rem;">FOUNDER | VISIONARY | HCA Lead: Nik Saiful </p>
-        <p style="margin-top:40px; font-size:0.7rem; opacity:0.3;">&copy; 2026 a NYK Strategy Pte. Ltd | SOVEREIGN DATA ARCHITECTURE | VERIFIED SINGAPORE RESIDENT.</p>
+        <p style="font-weight:900; font-size:1.3rem; margin-bottom:10px;"><span style="color:#FFF;">AKAR</span> <span style="color:#00A651;">SG</span></p>
+        <p style="opacity:0.5; font-size:0.8rem;">FOUNDER | VISIONARY | HCA CERTIFIED : Nik Saiful | a NYK Strategy Pte. Ltd. | Verified Singapore Resident</p>
     </footer>
 </body>
 </html>
