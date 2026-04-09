@@ -1,49 +1,109 @@
-<style>
-    /* 2026 SPATIAL GLASSMORPHISM */
-    .pillar-card { 
-        background: rgba(255, 255, 255, 0.03); /* Translucent */
-        backdrop-filter: blur(15px); /* The Glass Effect */
-        -webkit-backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 40px; 
-        border-radius: 12px; 
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKAR SG | Sovereign Integrity</title>
+    <style>
+        /* BALANCED LIQUID GLASS THEME */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background-color: #000B18; 
+            color: #E2E8F0; 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    .pillar-card:hover { 
-        background: rgba(197, 160, 89, 0.05); /* Subtle Gold Tint */
-        border-color: var(--sovereign-gold);
-        transform: translateY(-10px) scale(1.02);
-    }
+        header { 
+            background: rgba(0, 18, 38, 0.9); 
+            padding: 20px 10%; 
+            border-bottom: 2px solid #C5A059; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    /* THE SYSTEM GLOW (Sovereign Residency Indicator) */
-    .residency-status {
-        display: inline-flex;
-        align-items: center;
-        padding: 8px 15px;
-        background: rgba(0, 255, 0, 0.05);
-        border: 1px solid #00FF88;
-        border-radius: 50px;
-        color: #00FF88;
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-    }
+        .hero { 
+            padding: 100px 10%; 
+            text-align: center; 
+            background: radial-gradient(circle at center, #001C38 0%, #000B18 100%);
+        }
 
-    .glow-dot {
-        width: 8px;
-        height: 8px;
-        background: #00FF88;
-        border-radius: 50%;
-        margin-right: 10px;
-        box-shadow: 0 0 10px #00FF88;
-        animation: pulse 2s infinite;
-    }
+        .hero h1 { font-size: 2.8rem; color: #FFF; margin-bottom: 20px; }
 
-    @keyframes pulse {
-        0% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.5; transform: scale(1.2); }
-        100% { opacity: 1; transform: scale(1); }
-    }
-</style>
+        .container { padding: 60px 10%; max-width: 1200px; margin: 0 auto; }
+
+        /* THE LIQUID GLASS CARDS - REPAIRED SYNTAX */
+        .pillar-card { 
+            background: rgba(255, 255, 255, 0.05); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* Required for iPhone/Safari */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px; 
+            border-radius: 12px; 
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .pillar-card:hover { 
+            border-color: #C5A059; 
+            background: rgba(197, 160, 89, 0.05);
+        }
+
+        .status-glow {
+            display: inline-block;
+            padding: 5px 15px;
+            border: 1px solid #00FF88;
+            color: #00FF88;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+        }
+
+        footer { padding: 80px 10%; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .container { padding: 40px 5%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="font-weight:bold; font-size:1.2rem; color:white;">AKAR SG</div>
+    </header>
+
+    <section class="hero">
+        <div class="status-glow">SYSTEM ACTIVE: SOVEREIGN RESIDENCY</div>
+        <h1>Safeguarding Singapore’s<br>Product Sovereignty</h1>
+        <p>Advanced RegTech infrastructure for the National Digital Economy.</p>
+    </section>
+
+    <div class="container">
+        <div class="pillar-card">
+            <h3 style="color:#C5A059; margin-bottom:15px;">1. Food Resilience (SFS2)</h3>
+            <p>Digitizing the "Trust Handshake" to secure national 30-by-30 goals via immutable digital ledgers.</p>
+        </div>
+
+        <div class="pillar-card">
+            <h3 style="color:#C5A059; margin-bottom:15px;">2. Digital MSME Enablement</h3>
+            <p>Empowering Micro and SME operators with Mobile-First AI to reduce overheads and manage supply costs.</p>
+        </div>
+
+        <div class="pillar-card">
+            <h3 style="color:#C5A059; margin-bottom:15px;">3. National Supply Bridge</h3>
+            <p>Interfacing with partners like NTUC FairPrice Group to connect heartland shops to national stockpiles.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Founder: Nik Saiful - HCA Certified | <a href="mailto:nik@akarsg.sg" style="color:#C5A059;">nik@akarsg.sg</a></p>
+        <p style="margin-top:20px; opacity:0.5;">&copy; 2026 AKAR SG (a NYK Strategy Pte. Ltd.). Physically Resident in Singapore.</p>
+    </footer>
+</body>
+</html>
